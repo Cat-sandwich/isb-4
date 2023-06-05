@@ -1,0 +1,8 @@
+{
+    "hash": "data/hash.txt",
+    "bin": "data/bin_numbers.txt",
+    "last_four_numbers": "data/last_number.txt",
+    "card_number": "data/card_number.txt",
+    "csv_statistics": "data/statistics.csv",
+    "png_statistics": "data/statistics.png"
+}

@@ -1,12 +1,21 @@
 def moon(card_number: str) -> bool:
     """
-    Функция осуществляет проверку валидности номера карты с помощью алгоритма Луна
-    :param card_number: Номер карты
-    :return: Является ли номер карты настоящим
+    Проверка валидности номера карты с помощью алгоритма Луна
+    Параметры:
+    card_number(str) - Номер карты
+    Возвращаемые значения:
+    (bool) - Является ли номер карты настоящим 
     """
-    tmp = list(map(int, card_number))[::-1]
-    for i in range(1, len(tmp), 2):
-        tmp[i] *= 2
-        if tmp[i] > 9:
-            tmp[i] = tmp[i] % 10 + tmp[i] // 10
-    return sum(tmp) % 10 == 0
+    check = 7
+    all_number = list(map(int, card_number))
+    all_number = all_number[::-1]
+    for i, num in enumerate(all_number):
+        if i % 2 == 0:
+            tmp = num*2
+            if tmp > 9:
+                tmp -= 9
+            all_number[i] = tmp
+    total_sum = sum(all_number)
+    rem = total_sum % 10
+    check_sum = 10 - rem if rem != 0 else 0
+    return check_sum == check

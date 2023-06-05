@@ -12,10 +12,13 @@ logger.setLevel('INFO')
 
 def check_card_number(hash: str, card_number: str) -> int:
     """
-    Функция проверяет, соответствует ли номер карты хешу
-    :param hash: Хеш
-    :param card_number: Номер карты
-    :return: Номер карты, если сооветствует, 0 - если не соответствует
+    Проверка на соответствие номера карты хешу
+    Параметры:
+    hash(str) - Хеш
+    card_number(str) - Номер карты
+    Возвращаемые значения:
+    (int) - Номер карты, если сооветствует хешу
+    0 - если не соответствует
     """
     true_hash = hashlib.blake2b(card_number.encode()).hexdigest()
     if hash == true_hash:
@@ -26,12 +29,14 @@ def check_card_number(hash: str, card_number: str) -> int:
 def enumerate_card_number(hash: str, bins: list, last_four_numbers: str, core_number: int = mp.cpu_count()) \
         -> Optional[int]:
     """
-    Функция подбирает номер карты
-    :param hash: Хеш 
-    :param bins: набор БИНов карты
-    :param last_four_numbers: Последние 4 цифры 
-    :param core_number: Количество ядер
-    :return: Номер карты, если найден, если нет - ничего
+    Подбор номера карты
+    Параметры:
+    hash(str) - Хеш 
+    bins(list) - Набор БИНов карты
+    last_four_numbers(str) - Последние 4 цифры 
+    core_number(int) - Количество ядер
+    Возвращаемые значения:
+    Номер карты, если он найден, если нет - None
     """
     args = []
     for i in range(1000000):
