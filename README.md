@@ -9,7 +9,7 @@
 *                        Ищем номер карты с помощью хеша, необходимо указать количество процессов
 *  -sta STATISTICS, --statistics STATISTICS
 *                        Получаем статистику, подбирая номер карты на разном количестве процессов
-*  -luhn LUHN_ALGORITHM, --luhn_algorithm MOON_ALGORITHM
+*  -luhn LUHN_ALGORITHM, --luhn_algorithm LUHN_ALGORITHM
 *                        Проверяем корректность номера карты с помощью алгоритма Луна
 *  -vis VISUALIZE_STATISTICS, --visualize_statistics VISUALIZE_STATISTICS
 *                        Создаем гистограмму по имеющейся статистике
