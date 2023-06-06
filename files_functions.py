@@ -41,26 +41,6 @@ def write_data_to_txt_file(data: str, file_name: str) -> None:
             f"{err} Не удалось записать данные")
 
 
-def read_list(file_name: str) -> list:
-    """
-    Cчитывание списка из файла
-    Параметры:
-    file_name(str) - Путь к файлу
-    :Возвращаемые значения:
-    data(list) - Считанные данные
-    """
-    data = []
-    try:
-        with open(file_name, 'r') as f:
-            data = f.readlines()
-            data = list(map(int, data))
-        logging.info("Данные успешно считаны")
-    except OSError as err:
-        logging.warning(
-            f"{err} Не удалось считать данные")
-    return data
-
-
 def load_statistics(file_name: str) -> dict:
     """
     Считывание статистики из файла
